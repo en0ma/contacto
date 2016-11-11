@@ -1,0 +1,21 @@
+input {
+  margin-bottom: 10px
+}
+label{
+  display: block;
+  clear: both;
+}
+#header {
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 50%;
+  margin-top: 5%
+}
+
+.start-link {
+  margin-right: 5%;
+  font-weight: bold;
+  
+}
