@@ -1,0 +1,26 @@
+{% extends "./site.html" %}
+{% block title %} Showing Contacts {% endblock %}
+
+{% block content%}
+<div class="content">
+  <h4 class="content-title">My Contacts</h4>
+  {% if contacts %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contact in contacts %}
+          <tr><td>{{contact.id}}</td><td>{{contact.name}}</td><td>{{contact.email}}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no contacts yet. <a href="/add">add one now?</a></p>
+  {% endif %}
+</div>
+{% endblock %}

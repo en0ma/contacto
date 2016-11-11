@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>C'Manager - {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="container">
+      <div id="header">
+        <h3><a href="/">C'Manager</a></h3>
+        <span class="small">Making contact management easy.</span>
+        <hr>
+      </div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

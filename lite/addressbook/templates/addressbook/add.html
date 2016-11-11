@@ -1,0 +1,30 @@
+{% extends "./site.html" %}
+{% block title %} New Contact{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <h4 class="content-title">Add Contact</h4>
+
+    {% if success_message %}
+      <div class="alert alert-success" role="alert">{{success_message}}</div>
+    {% endif %}
+
+    {% if errors %}
+      <div class="alert alert-danger" role="alert">
+        <ul class="error-message">
+          {% for error in errors %}
+            <li>{{error}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <div id="contact-form">
+      <form action="/add" method="post">
+        {% csrf_token %}
+        {{ contact }}
+        <br><input class="btn btn-primary" type="submit" value="Add" />
+      </form>
+    </div>
+  </div>
+{% endblock %}
